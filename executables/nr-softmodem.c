@@ -474,8 +474,8 @@ static void initialize_agent(ngran_node_t node_type, e2_agent_args_t oai_args)
   } else if (node_type == ngran_gNB_DU) {
     const gNB_MAC_INST* mac = RC.nrmac[0];
     AssertFatal(mac, "MAC not initialized\n");
-    cu_du_id = mac->f1_config.gnb_id;
-    nb_id = mac->f1_config.setup_req->gNB_DU_id;
+    nb_id = mac->f1_config.gnb_id;
+    cu_du_id = mac->f1_config.setup_req->gNB_DU_id;
   } else if (node_type == ngran_gNB_CU || node_type == ngran_gNB_CUCP) {
     // agent buggy: the CU has no second ID, it is the CU-UP ID
     // however, that is not a problem her for us, so put the same ID twice
